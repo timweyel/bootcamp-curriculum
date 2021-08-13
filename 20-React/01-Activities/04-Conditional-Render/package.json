@@ -1,0 +1,16 @@
+{
+  "name": "04-Conditional-Render",
+  "version": "1.0.0",
+  "description": "In this activity, you will render one of four different components based upon the component's state using a `switch` statement.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/icons": "^4.11.2",
+    "react-router-dom": "^5.2.0"
+  }
+}

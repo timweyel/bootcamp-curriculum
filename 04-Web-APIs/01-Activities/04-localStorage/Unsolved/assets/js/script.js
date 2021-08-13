@@ -7,8 +7,15 @@ var userPasswordSpan = document.querySelector('#user-password');
 
 function renderLastRegistered() {
   // TODO: Retrieve the last email and password from localStorage
+  let email = localStorage.getItem('email');
+  let password = localStorage.getItem('password');
   // TODO: If they are null, return early from this function
+  if (email === null || password === null) {
+    return;
+  }
   // TODO: Otherwise set the text of the 'userEmailSpan' and 'userPasswordSpan' to the corresponding values from localStorage
+  userEmailSpan.textContent = email;
+  userPasswordSpan.textContent = password;
 }
 
 renderLastRegistered();
@@ -32,6 +39,9 @@ signUpButton.addEventListener('click', function(event) {
     displayMessage('success', 'Registered successfully');
 
     // TODO: Save email and password to localStorage
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
     // TODO: Render the last registered email and password
+    renderLastRegistered();
   }
 });

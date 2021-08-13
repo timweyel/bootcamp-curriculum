@@ -5,7 +5,9 @@ import SearchGiphy from './pages/SearchGiphy';
 const App = () => {
   return (
     <div className='App' style={{ backgroundColor: 'teal' }}>
-      {<SearchGiphy />}
+      <SearchGiphy>
+
+      </SearchGiphy>
     </div>
   );
 };

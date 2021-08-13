@@ -1,5 +1,6 @@
 const { User } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const jwt = require("jsonwebtoken");
 
 const resolvers = {
   Query: {
@@ -10,6 +11,7 @@ const resolvers = {
   Mutation: {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
+      console.log(user);
 
       if (!user) {
         throw new AuthenticationError('That user does not exist');
@@ -18,7 +20,9 @@ const resolvers = {
       if (password !== user.password) {
         throw new AuthenticationError('Incorrect credentials');
       }
-      return user;
+
+      jwt.sign({ _id: user._id}, 'secret', {expiresIn: 1000 * 60 * 60 * 24 })
+      return { token, user };
     }
   }
 };
