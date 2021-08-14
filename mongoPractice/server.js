@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }));
 
 mongoose.set('debug', true);
 
-mongoose.connect('mongodb+srv://emmanuel:imcool@cluster0.xl7xv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://{username}:imcool@cluster0.xl7xv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
